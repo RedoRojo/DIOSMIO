@@ -1,0 +1,101 @@
+{
+  "name": "tdd-extension-taller",
+  "displayName": "TDD Lab",
+  "description": "Plugin de VSCode para la aplicación TDDLab",
+  "publisher": "TDDLab-TallerDesarrollo",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:myView",
+    "onCommand:TDD.runTest"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "TDD.runTest",
+        "title": "Run Test"
+      },
+      {
+        "command": "extension.showTimeline",
+        "title": "Show Timeline"
+      },
+      {
+        "command": "TDD.cloneCommand",
+        "title": "Clone Proyect"
+      },
+      {
+        "command": "TDD.postCommand",
+        "title": "Post TDD Data"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "myExtension",
+          "title": "TDD Lab",
+          "icon": "./src/modules/RunTestButton/resources/icon.svg"
+        }
+      ],
+      "panel": [
+        {
+          "id": "timelineContainer",
+          "title": "Timeline",
+          "icon": ""
+        }
+      ]
+    },
+    "views": {
+      "myExtension": [
+        {
+          "id": "tddTestExecution",
+          "name": "TDD test execution"
+        }
+      ],
+      "timelineContainer": [
+        {
+          "id": "timelineView",
+          "name": "Timeline",
+          "type": "webview"
+        }
+      ]
+    },
+    "menus": {
+      "editor/title": [
+        {
+          "command": "TDD.runTest",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.94.0",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "extension": "file:",
+    "node-fetch": "^3.3.2",
+    "tdd-extension-taller": "file:"
+  }
+}

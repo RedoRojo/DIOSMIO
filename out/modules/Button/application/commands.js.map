@@ -1,0 +1,1 @@
+{"version":3,"file":"commands.js","sourceRoot":"","sources":["../../../../src/modules/Button/application/commands.ts"],"names":[],"mappings":";;;AAEA,MAAa,cAAc;IACL;IAApB,YAAoB,kBAAsC;QAAtC,uBAAkB,GAAlB,kBAAkB,CAAoB;IAAG,CAAC;IAE9D,KAAK,CAAC,cAAc;QAClB,MAAM,IAAI,CAAC,kBAAkB,CAAC,cAAc,CAAC,cAAc,EAAE,oBAAoB,CAAC,CAAC;IACrF,CAAC;CACF;AAND,wCAMC"}
